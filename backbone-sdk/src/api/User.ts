@@ -8,11 +8,7 @@ namespace User {
 
     type Schema<T extends boolean | number | string = any> = { default: T; schema: z.ZodType<T> };
 
-    export const list: Record<Const.UserPreferenceName, Schema> = {
-      [upn.chatMessagePN]: { default: true, schema: z.boolean() },
-      [upn.practiceReminderPN]: { default: true, schema: z.boolean() },
-      [upn.streakWarningPN]: { default: true, schema: z.boolean() },
-    };
+    export const list: Record<Const.UserPreferenceName, Schema> = {};
 
     export const loadParamsSchema = z.object({ name: z.nativeEnum(Const.userPreferenceName) });
     export const loadReturnSchema = z.object({

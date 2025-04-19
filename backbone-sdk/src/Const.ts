@@ -11,11 +11,7 @@ namespace Const {
   } as const;
   export type AccessVerificationType = (typeof accessVerificationType)[keyof typeof accessVerificationType];
 
-  export const userPreferenceName = {
-    chatMessagePN: "chat-message-notification",
-    practiceReminderPN: "practice-reminder-notification",
-    streakWarningPN: "streak-warning-notification",
-  } as const;
+  export const userPreferenceName = {} as const;
   export type UserPreferenceName = (typeof userPreferenceName)[keyof typeof userPreferenceName];
 }
 
