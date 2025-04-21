@@ -11,6 +11,6 @@ router.post("/auth", require("./auth").default);
 router.post("/reauth", require("./reauth").default);
 
 router.use("/user", require("./user").default);
-router.use("/verification", require("./verification").default);
+router.use("/access-verification", require("./verification").default);
 
 export default router;

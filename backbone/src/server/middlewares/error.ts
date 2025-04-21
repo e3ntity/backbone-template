@@ -1,6 +1,6 @@
 import errors from "@root/errors";
-import APIError from "@root/errors/APIError";
 import logger from "@root/utils/logger";
+import { APIError } from "backbone-sdk";
 import { NextFunction, Request, Response } from "express";
 
 /**
@@ -9,8 +9,8 @@ import { NextFunction, Request, Response } from "express";
  * @returns The middleware.
  */
 export default function makeErrorMiddleware({} = {}) {
-  return function errorMiddleware(err: APIError | Error, req: Request, res: Response, _next: NextFunction) {
-    if (err instanceof APIError) {
+  return function errorMiddleware(err: APIError.APIError | Error, req: Request, res: Response, _next: NextFunction) {
+    if (err instanceof APIError.APIError) {
       err.expressResponse(res);
       return;
     }
